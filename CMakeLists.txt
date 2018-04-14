@@ -1,5 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
 
+# Prohibit in-source build
+IF("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+  message(FATAL_ERROR "In-source build is not supported. Please, use an empty directory for building the project.")
+ENDIF()
+
+
 cmake_policy(SET CMP0048 NEW)
 
 project(libmylib VERSION 0.0.1)
