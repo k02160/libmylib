@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: mylib
+Description: my library sample
+Version: @VERSION@
+Libs: -L${libdir} -lmylib
+
