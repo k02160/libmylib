@@ -59,4 +59,12 @@ set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${PROJECT_VERSION}")
 set(CPACK_SOURCE_IGNORE_FILES "/_build/;/build/;/config/;/.git/;/.svn/;${CPACK_SOURCE_IGNORE_FILES}")
 include(CPack)
 
+configure_file(
+	${CMAKE_CURRENT_SOURCE_DIR}/libmylib.pc.in
+	${CMAKE_CURRENT_BINARY_DIR}/libmylib.pc
+	@ONLY
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libmylib.pc
+  DESTINATION lib/pkgconfig)
 
